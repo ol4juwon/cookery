@@ -1,0 +1,63 @@
+.create{
+    max-width: 480px;
+    margin: 60px auto;
+    color: #555;
+}
+label span{ 
+    margin: 30px 0px;
+    padding: 20px 0px;
+}
+ /* label span{
+    margin: 30px 0 20px;
+} */
+
+.create p {
+    margin-top: 10px;
+    font-size: 0.8em;
+}
+
+.create button{
+    display: block;
+    margin: 20px auto;
+    padding: 8px 10px;
+border: 0;
+    text-decoration: none;
+    border-radius: 4px;
+    background: #58249c;
+    color: #fff;
+    width: 100px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.ingredients {
+    display: flex;
+    align-items: center;
+}
+
+.ingredients button {
+margin: 0 0 0 10px;
+}
+ em::after{
+content: ', ';
+}
+ em:last-child::after{
+content: '.';
+}
+
+.close{
+    color: red;
+    margin: 0 0 0 10px;
+    font-size: 10px;
+    border: 1px solid red;
+    border-radius: 10px;
+    padding: 5px;
+    width: 10px;
+    align-items: center;
+    justify-content: center;
+
+}
+label{
+    /* border: 1px solid red; */
+    margin-top: 40px;
+}

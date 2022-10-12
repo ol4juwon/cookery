@@ -1,0 +1,14 @@
+.searchBar form {
+    display: flex;
+    align-items: center;
+}
+
+.searchBar input {
+    margin-left: 10px;
+    height: 40px;
+}
+.searchBar label {
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
