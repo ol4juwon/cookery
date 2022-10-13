@@ -6,6 +6,11 @@
     background: #fff;
     padding: 40px;
 }
+.edit {
+    width: 40px;
+    height: 40px;
+    outline: none;
+}
 .recipe ul {
     display: flex;
     padding: 0;

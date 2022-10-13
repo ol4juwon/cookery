@@ -9,27 +9,27 @@ const Home = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        projectStore.collection("recipes").get()
-            .then((snapshot) => {
-                console.log(snapshot);
-                if(snapshot.empty){
-                    setError("No Recipes  found");
-                }else{
-                    const data = snapshot.docs.map(doc => {
-                        return {
-                            id: doc.id,
-                            ...doc.data()
-                        };
-                    });
-                    setDate(data);
-                }
-            })
-            .catch((err) => {
-                console.log(err);
-                setError(err.message);
-            });
+       const unsub =  projectStore.collection("recipes").onSnapshot((snapshot) => {
+            console.log(snapshot);
+            if(snapshot.empty){
+                setError("No Recipes  found");
+            }else{
+                const data = snapshot.docs.map(doc => {
+                    return {
+                        id: doc.id,
+                        ...doc.data()
+                    };
+                });
+                setDate(data);
+            }
+        }, (err) => {
+            console.log(err);
+            setError(err.message);
+        });
 
         setIsLoading(false);
+
+        return () => unsub();
     },[]);
     return (
         <div className='home'>

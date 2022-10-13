@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import { projectStore } from "../../Services/firebase";
-
+import EDIT from '../../assets/edit.svg'
 // import {useFetch} from "../../hooks/useFetch";
-import {ReactComponent as Cook} from "./cook.svg";
+import {ReactComponent as Cook} from "../../assets/cook.svg";
 import "./Recipe.css";
 const Recipe = () => {
     const [data, setData] = useState();
@@ -13,19 +13,14 @@ const Recipe = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        projectStore.collection("recipes").doc(id).get()
-            .then((snapshot) => {
-                if(!snapshot.exists){
-                    setError("Recipe not found");
-                }else{
-                    setData(snapshot.data());
-                }
+        projectStore.collection("recipes").doc(id).onSnapshot((snapshot) => {
+            if(!snapshot.exists){
+                setError("Recipe not found");
+            }else{
+                setData(snapshot.data());
             }
-            )
-            .catch((err) => {console.log(err); setError(err.message);
-                setError(err);
-            }
-            );
+        }
+        );
         setIsLoading(false);
 
     }, [id]);
@@ -41,7 +36,7 @@ const Recipe = () => {
             {
                 !isLoading && !error && data && (
                     <>
-                        <h2>{data.title}</h2>
+                        <h2>{data.title}<img className="edit" src={EDIT} alt="edit" /></h2>
                         <p>Prep Time: {data.cookingTime}</p>
                         <ul>
                             {data.ingredients.map(
