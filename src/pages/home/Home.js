@@ -9,7 +9,7 @@ const Home = () => {
 
     useEffect(() => {
         setIsLoading(true);
-       const unsub =  projectStore.collection("recipes").onSnapshot((snapshot) => {
+        const unsub =  projectStore.collection("recipes").onSnapshot((snapshot) => {
             console.log(snapshot);
             if(snapshot.empty){
                 setError("No Recipes  found");

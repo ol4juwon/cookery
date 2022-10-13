@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import { projectStore } from "../../Services/firebase";
-import EDIT from '../../assets/edit.svg'
+import EDIT from "../../assets/edit.svg";
 // import {useFetch} from "../../hooks/useFetch";
 import {ReactComponent as Cook} from "../../assets/cook.svg";
 import "./Recipe.css";
