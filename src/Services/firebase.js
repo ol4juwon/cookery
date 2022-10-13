@@ -2,14 +2,12 @@ import firebase from "firebase/app";
 import 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA3nIeOYgJOd0MdWb1ToXegPhS9B2cqmzM",
-  authDomain: "tarift-fc9a8.firebaseapp.com",
-  databaseURL: "https://tarift-fc9a8.firebaseio.com",
-  projectId: "tarift-fc9a8",
-  storageBucket: "tarift-fc9a8.appspot.com",
-  messagingSenderId: "427732268435",
-  appId: "1:427732268435:web:a62552475cd21a2012a466",
-  measurementId: "G-4GZT9J8FB5"
+  apiKey: "AIzaSyDz5KsAaUkQYhkOust4LiJGP7QPTJuxekw",
+  authDomain: "cruck-85d70.firebaseapp.com",
+  projectId: "cruck-85d70",
+  storageBucket: "cruck-85d70.appspot.com",
+  messagingSenderId: "773909252505",
+  appId: "1:773909252505:web:54f3a87ab6b19cca352b08"
 };
 
 firebase.initializeApp(firebaseConfig);
